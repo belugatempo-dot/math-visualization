@@ -1,1 +1,77 @@
 @import "tailwindcss";
+
+@theme {
+  /* ── Cosmic Palette (matching StarQuest) ── */
+  --color-night-deep: #0f172a;
+  --color-night-swirl: #1e3a5f;
+  --color-night-cosmic: #312e81;
+  --color-glass-card: rgba(65, 75, 150, 0.5);
+  --color-nav-bg: rgba(15, 23, 42, 0.88);
+  --color-accent: #ffd700;
+  --color-accent-glow: rgba(255, 215, 0, 0.12);
+  --color-accent-amber: #fbbf24;
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+
+  /* ── Font stacks ── */
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans: "Instrument Sans", "Noto Sans SC", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ── Global body ── */
+body {
+  font-family: var(--font-sans);
+  background: var(--color-night-deep);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Glass-morphism card ── */
+.glass-card {
+  background: rgba(65, 75, 150, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.875rem;
+}
+
+/* ── SVG canvas (glass variant) ── */
+.svg-canvas {
+  background: rgba(65, 75, 150, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Dividers ── */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+
+/* ── Hover glow (gold) ── */
+.hover-glow:hover {
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.3);
+}
+
+/* ── Star text glow ── */
+.star-glow {
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+/* ── Twinkle animation for stars ── */
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ── Global accent for inputs ── */
+input[type="range"] {
+  accent-color: var(--color-accent);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-accent);
+}
